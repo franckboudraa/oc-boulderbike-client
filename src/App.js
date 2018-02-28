@@ -1,44 +1,26 @@
 import React, { Component } from 'react';
-import { Container, Menu } from 'semantic-ui-react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Segment } from 'semantic-ui-react';
+
+import Header from './components/Layout/Header';
+import Homepage from './components/StaticPages/Homepage';
+import Photos from './components/Photos/Photos';
+import Location from './components/Location/Location';
+import Riders from './components/Riders/Riders';
 
 class App extends Component {
-  state = {};
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
   render() {
-    const { activeItem } = this.state;
     return (
-      <Container>
-        <Menu stackable>
-          <Menu.Item>Boulder Bike Tour 2020</Menu.Item>
+      <Router>
+        <Segment inverted>
+          <Header />
 
-          <Menu.Item
-            name="features"
-            active={activeItem === 'features'}
-            onClick={this.handleItemClick}
-          >
-            Features
-          </Menu.Item>
-
-          <Menu.Item
-            name="testimonials"
-            active={activeItem === 'testimonials'}
-            onClick={this.handleItemClick}
-          >
-            Testimonials
-          </Menu.Item>
-          <Menu.Menu position="right">
-
-          <Menu.Item
-            name="sign-in"
-            active={activeItem === 'sign-in'}
-            onClick={this.handleItemClick}
-          >
-            Sign-in
-          </Menu.Item>
-          </Menu.Menu>
-        </Menu>
-      </Container>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/photos" component={Photos} />
+          <Route path="/location" component={Location} />
+          <Route path="/riders" component={Riders} />
+        </Segment>
+      </Router>
     );
   }
 }
