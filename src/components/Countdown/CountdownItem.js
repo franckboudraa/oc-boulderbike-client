@@ -57,7 +57,7 @@ class CountdownItem extends Component {
 
   render() {
     return (
-      <Statistic inverted color={this.props.color} size="huge">
+      <Statistic color={this.props.color} size="huge">
         <Statistic.Value>{this.state.value}</Statistic.Value>
         <Statistic.Label>{this.props.unit}</Statistic.Label>
       </Statistic>

@@ -9,10 +9,14 @@
 }
 */
 
-body {
-  background-color: #1b1c1d;
-}
-
 .brand {
   font-family: 'Open Sans', sans-serif;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.bgrey {
+  background-color: #2f3c47 !important;
 }
