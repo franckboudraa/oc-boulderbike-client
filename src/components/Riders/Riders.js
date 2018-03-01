@@ -67,7 +67,7 @@ class Riders extends Component {
   renderRiders = () => {
     const { riders } = this.state;
     return (
-      <Card.Group centered itemsPerRow={4} doubling>
+      <Card.Group centered itemsPerRow={5} doubling>
         {riders.map(rider => (
           <RiderItem
             key={rider.id}

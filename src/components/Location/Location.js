@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
+import Map from './Map';
+
 class Location extends Component {
   render() {
-    return <div>Location</div>;
+    return (
+    <div className="full-height">
+    <Map />
+    </div>
+    )
   }
 }
 
