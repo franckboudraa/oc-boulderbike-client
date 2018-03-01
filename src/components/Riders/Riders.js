@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchRiders } from '../../actions';
 import axios from 'axios';
 import {
   Container,
@@ -12,17 +14,19 @@ import {
 import RiderItem from './RiderItem';
 
 class Riders extends Component {
-  state = {
+  /*state = {
     error: false,
     loading: true,
     riders: []
-  };
+  };*/
 
   componentDidMount = () => {
-    this.getRiders();
+    //this.getRiders();
+    this.props.fetchRiders();
+    //console.log(this.props);
   };
 
-  getRiders = async () => {
+  /*getRiders = async () => {
     let localRiders = await localStorage.getItem('bbt-riders');
     localRiders = JSON.parse(localRiders);
     if (localRiders) {
@@ -49,7 +53,7 @@ class Riders extends Component {
         });
       }
     }
-  };
+  };*/
 
   renderError = () => {
     return (
@@ -65,7 +69,7 @@ class Riders extends Component {
   };
 
   renderRiders = () => {
-    const { riders } = this.state;
+    const { riders } = this.props.riders;
     return (
       <Card.Group centered itemsPerRow={5} doubling>
         {riders.map(rider => (
@@ -83,7 +87,7 @@ class Riders extends Component {
     );
   };
   render() {
-    const { loading, error } = this.state;
+    const { loading, error } = this.props.riders;
     return (
       <Container>
         <h1 className="text-center mt-3 uppercase">Riders</h1>
@@ -95,4 +99,10 @@ class Riders extends Component {
   }
 }
 
-export default Riders;
+function mapStateToProps(state) {
+  return {
+    riders: state.riders
+  };
+}
+
+export default connect(mapStateToProps, { fetchRiders })(Riders);
