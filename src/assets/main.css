@@ -9,8 +9,18 @@
 }
 */
 
+.bg-img{
+  background-image:url(https://images.unsplash.com/photo-1446057633965-55d2dcb22598?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ee32fae7ac06ac16398262905b95506&auto=format&fit=crop&w=1950&q=80);
+  background-size:cover;
+  background-position:center;
+}
+
 .brand {
   font-family: 'Open Sans', sans-serif;
+}
+
+.uppercase{
+  text-transform: uppercase !important;
 }
 
 .text-white {
@@ -19,4 +29,20 @@
 
 .bgrey {
   background-color: #2f3c47 !important;
+}
+
+.bgrey-lighter{
+  background-color:#465b6c !important;
+}
+
+.bgrey-color {
+  color: #2f3c47 !important;
+}
+
+.byellow-color{
+  color:#fcff00 !important;
+}
+
+.thicker {
+    font-weight: 900 !important;
 }

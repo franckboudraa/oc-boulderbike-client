@@ -57,9 +57,9 @@ class CountdownItem extends Component {
 
   render() {
     return (
-      <Statistic color={this.props.color} size="huge">
-        <Statistic.Value>{this.state.value}</Statistic.Value>
-        <Statistic.Label>{this.props.unit}</Statistic.Label>
+      <Statistic size="huge" className="mx-5">
+        <Statistic.Value className="byellow-color thicker">{this.state.value}</Statistic.Value>
+        <Statistic.Label className="text-white">{this.props.unit}</Statistic.Label>
       </Statistic>
     );
   }

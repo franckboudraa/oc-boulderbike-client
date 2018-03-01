@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Menu, Icon, Input } from 'semantic-ui-react';
+import { Container, Menu, Icon, Image } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
+
+import bbtlogo from '../../assets/bbt_logo.png';
 
 class Header extends Component {
   render() {
@@ -16,20 +18,28 @@ class Header extends Component {
           attached
         >
           <Container>
-            <Menu.Item className="brand">Boulder Bike Tour 2020</Menu.Item>
+            <Menu.Item className="brand">
+              <Image src={bbtlogo} />
+            </Menu.Item>
+            <Menu.Item>
+              April 1, 2020
+            </Menu.Item>
+            <Menu.Item>
+              Rocky Mountains, Colorado
+            </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item name="facebook">
-                <Icon name="facebook f" />
-                <Icon name="twitter" />
-                <Icon name="instagram" />
-                <Icon name="pinterest" />
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="facebook f" /></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="twitter" /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="instagram" /></a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="pinterest" /></a>
               </Menu.Item>
             </Menu.Menu>
           </Container>
         </Menu>
         <Menu
-          widths={5}
-          condensed
+          widths={6}
+
           inverted
           borderless
           stackable
@@ -39,6 +49,9 @@ class Header extends Component {
           <Container>
             <Menu.Item name="homepage" as={NavLink} exact to="/">
               Homepage
+            </Menu.Item>
+            <Menu.Item name="about" as={NavLink} to="/about">
+              About
             </Menu.Item>
             <Menu.Item name="photos" as={NavLink} to="/photos">
               Photos
