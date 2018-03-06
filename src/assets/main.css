@@ -61,3 +61,8 @@
   height: 95vh !important;
   /*height: calc(100vh + 2px);*/
 }
+
+.legend {
+  background-color: #2f3c47 !important;
+  opacity: 0.9 !important;
+}

@@ -10,6 +10,7 @@ import reducers from './reducers/rootReducer';
 import App from './App';
 import './assets/main.css';
 import './assets/utilities.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import registerServiceWorker from './registerServiceWorker';
 
