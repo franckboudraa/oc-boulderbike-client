@@ -3,7 +3,7 @@ import { Card, Container } from 'semantic-ui-react';
 
 const ArticleItem = () => {
   return (
-    <Container className="mt-3">
+    <Container className="my-3">
       <Card fluid>
         <Card.Content>
           <Card.Header>Running & Sleeping</Card.Header>

@@ -26,10 +26,6 @@ body {
   ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.brand {
-  font-family: 'Open Sans', sans-serif;
-}
-
 .uppercase {
   text-transform: uppercase !important;
 }
