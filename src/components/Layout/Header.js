@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Menu, Icon, Image } from 'semantic-ui-react';
+import { Container, Dropdown, Menu, Icon, Image } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
 import bbtlogo from '../../assets/bbt_logo.png';
@@ -65,9 +65,15 @@ const Header = () => {
           <Menu.Item name="homepage" as={NavLink} exact to="/">
             Home
           </Menu.Item>
-          <Menu.Item name="informations" as={NavLink} to="/informations">
-            Plan your race
-          </Menu.Item>
+          <Dropdown item simple text="Plan your race">
+            <Dropdown.Menu>
+              <Dropdown.Item as={NavLink} to="/informations">
+                Informations
+              </Dropdown.Item>
+              <Dropdown.Item>Russian</Dropdown.Item>
+              <Dropdown.Item>Spanish</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
           <Menu.Item name="photos" as={NavLink} to="/photos">
             Stories & Photos
           </Menu.Item>
