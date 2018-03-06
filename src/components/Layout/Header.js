@@ -21,25 +21,48 @@ class Header extends Component {
             <Menu.Item className="brand">
               <Image src={bbtlogo} />
             </Menu.Item>
-            <Menu.Item>
-              April 1, 2020
-            </Menu.Item>
-            <Menu.Item>
-              Rocky Mountains, Colorado
-            </Menu.Item>
+            <Menu.Item>April 1, 2020</Menu.Item>
+            <Menu.Item>Rocky Mountains, Colorado</Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item name="facebook">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="facebook f" /></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="twitter" /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="instagram" /></a>
-                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="text-white"><Icon name="pinterest" /></a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white"
+                >
+                  <Icon name="facebook f" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white"
+                >
+                  <Icon name="twitter" />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white"
+                >
+                  <Icon name="instagram" />
+                </a>
+                <a
+                  href="https://pinterest.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white"
+                >
+                  <Icon name="pinterest" />
+                </a>
               </Menu.Item>
             </Menu.Menu>
           </Container>
         </Menu>
         <Menu
           widths={6}
-
           inverted
           borderless
           stackable
@@ -48,13 +71,13 @@ class Header extends Component {
         >
           <Container>
             <Menu.Item name="homepage" as={NavLink} exact to="/">
-              Homepage
+              Home
             </Menu.Item>
-            <Menu.Item name="about" as={NavLink} to="/about">
-              About
+            <Menu.Item name="informations" as={NavLink} to="/informations">
+              Plan your race
             </Menu.Item>
             <Menu.Item name="photos" as={NavLink} to="/photos">
-              Photos
+              Stories & Photos
             </Menu.Item>
             <Menu.Item name="location" as={NavLink} to="/location">
               Location

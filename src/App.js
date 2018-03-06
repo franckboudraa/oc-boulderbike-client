@@ -12,6 +12,7 @@ import Location from './components/Location/Location';
 import Riders from './components/Riders/Riders';
 import Sponsorship from './components/Sponsorship/Sponsorship';
 import About from './components/StaticPages/About';
+import Informations from './components/StaticPages/Informations';
 
 class App extends Component {
   render() {
@@ -25,7 +26,7 @@ class App extends Component {
           <Route path="/location" component={Location} />
           <Route path="/riders" component={Riders} />
           <Route path="/sponsorship" component={Sponsorship} />
-          <Route path="/about" component={About} />
+          <Route path="/informations" component={Informations} />
         </div>
       </Router>
     );
