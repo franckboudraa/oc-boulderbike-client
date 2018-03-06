@@ -11,7 +11,6 @@ import Photos from './components/Photos/Photos';
 import Location from './components/Location/Location';
 import Riders from './components/Riders/Riders';
 import Sponsorship from './components/Sponsorship/Sponsorship';
-import About from './components/StaticPages/About';
 import Informations from './components/StaticPages/Informations';
 import ArticleItem from './components/Articles/ArticleItem';
 import Footer from './components/Layout/Footer';

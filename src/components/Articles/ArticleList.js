@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Item, Icon, Image } from 'semantic-ui-react';
+import { Card, Icon } from 'semantic-ui-react';
 
 const ArticleList = () => {
   return (

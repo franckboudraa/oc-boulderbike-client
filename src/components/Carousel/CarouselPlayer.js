@@ -18,15 +18,22 @@ const CarouselPlayer = () => {
     >
       <div>
         <img src={carousel2} alt="carousel2" />
-        <p className="legend">Trainings have started! Credit: Marcus Spiske</p>
+        <p className="legend">
+          Trainings have started for Boulder Bike Tour 2020 ! Credit: Marcus
+          Spiske
+        </p>
       </div>
       <div>
         <img src={carousel1} alt="carousel1" />
-        <p className="legend">Credit: Marcus Spiske</p>
+        <p className="legend">
+          Who will be the winner this year? Credit: Marcus Spiske
+        </p>
       </div>
       <div>
         <img src={carousel3} alt="carousel3" />
-        <p className="legend">Credit: Marc Wieland</p>
+        <p className="legend">
+          The winner of the 2010 edition! Credit: Marc Wieland
+        </p>
       </div>
     </Carousel>
   );

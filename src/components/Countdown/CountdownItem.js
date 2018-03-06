@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Statistic, Responsive } from 'semantic-ui-react';
+import { Statistic } from 'semantic-ui-react';
 
 import countdown from '../../lib/countdown';
 
