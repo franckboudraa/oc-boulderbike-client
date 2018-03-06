@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Statistic } from 'semantic-ui-react';
+import { Statistic, Responsive } from 'semantic-ui-react';
 
-import countdown from '../../lib/countdown.js';
+import countdown from '../../lib/countdown';
 
 class CountdownItem extends Component {
   state = {
@@ -43,12 +43,9 @@ class CountdownItem extends Component {
           value: countdown(targetDate).days
         });
       case 'months':
+        let yearsDivided = countdown(targetDate).years * 12;
         return this.setState({
-          value: countdown(targetDate).months
-        });
-      case 'years':
-        return this.setState({
-          value: countdown(targetDate).years
+          value: countdown(targetDate).months + yearsDivided
         });
       default:
         break;
@@ -57,9 +54,13 @@ class CountdownItem extends Component {
 
   render() {
     return (
-      <Statistic size="huge" className="mx-5">
-        <Statistic.Value className="byellow-color thicker">{this.state.value}</Statistic.Value>
-        <Statistic.Label className="text-white">{this.props.unit}</Statistic.Label>
+      <Statistic as={Statistic} size="small">
+        <Statistic.Value className="byellow-color thicker">
+          {this.state.value}
+        </Statistic.Value>
+        <Statistic.Label className="text-white">
+          {this.props.unit}
+        </Statistic.Label>
       </Statistic>
     );
   }
