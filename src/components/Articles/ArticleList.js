@@ -13,7 +13,7 @@ const ArticleList = () => {
           to personalize your sleep environment...
         </Card.Description>
       </Card.Content>
-      <Card.Content extra textAlign="right">
+      <Card.Content extra>
         <Link to="article">
           <Icon name="angle right" />
           Read more

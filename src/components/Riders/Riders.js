@@ -32,17 +32,23 @@ class Riders extends Component {
     const { loading, error } = this.props.riders;
     return (
       <Container>
-        <h1 className="text-center mt-3 uppercase">Riders</h1>
-        {loading ? <Loader active inline="centered" /> : ''}
-        {error ? (
-          <Message negative>
-            <Message.Header>Sorry, an error occured</Message.Header>
-            <p>Please try again</p>
-          </Message>
-        ) : (
-          ''
-        )}
-        {!loading && !error ? this.renderRiders() : ''}
+        <Card fluid centered className="my-3">
+          <Card.Content>
+            <div className="text-center mb-4">
+              <h1>Riders in course</h1>
+            </div>
+            {loading ? <Loader active inline="centered" /> : ''}
+            {error ? (
+              <Message negative>
+                <Message.Header>Sorry, an error occured</Message.Header>
+                <p>Please try again</p>
+              </Message>
+            ) : (
+              ''
+            )}
+            {!loading && !error ? this.renderRiders() : ''}
+          </Card.Content>
+        </Card>
       </Container>
     );
   }
