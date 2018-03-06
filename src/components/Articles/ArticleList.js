@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Item, Icon, Image } from 'semantic-ui-react';
 
 const ArticleList = () => {
   return (
-    <Card fluid centered>
+    <Card fluid centered className="bg-gradient-white">
       <Card.Content>
         <Card.Header>Running & Sleep</Card.Header>
         <Card.Meta>March 6, 2018 by Franck</Card.Meta>
@@ -13,10 +14,10 @@ const ArticleList = () => {
         </Card.Description>
       </Card.Content>
       <Card.Content extra textAlign="right">
-        <a>
+        <Link to="article">
           <Icon name="angle right" />
           Read more
-        </a>
+        </Link>
       </Card.Content>
     </Card>
   );

@@ -12,10 +12,10 @@ class Homepage extends Component {
         <CarouselPlayer />
         <Grid stackable padded="vertically">
           <Grid.Row stretched columns={2}>
-            <Grid.Column width={6}>
+            <Grid.Column width={6} className="pr-1">
               <ArticleList />
             </Grid.Column>
-            <Grid.Column width={10}>
+            <Grid.Column width={10} className="pl-3">
               <Countdown />
             </Grid.Column>
           </Grid.Row>

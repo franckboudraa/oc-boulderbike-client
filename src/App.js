@@ -13,6 +13,7 @@ import Riders from './components/Riders/Riders';
 import Sponsorship from './components/Sponsorship/Sponsorship';
 import About from './components/StaticPages/About';
 import Informations from './components/StaticPages/Informations';
+import ArticleItem from './components/Articles/ArticleItem';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path="/riders" component={Riders} />
           <Route path="/sponsorship" component={Sponsorship} />
           <Route path="/informations" component={Informations} />
+          <Route path="/article" component={ArticleItem} />
         </div>
       </Router>
     );
