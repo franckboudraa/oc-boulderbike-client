@@ -14,6 +14,8 @@ import Sponsorship from './components/Sponsorship/Sponsorship';
 import Informations from './components/StaticPages/Informations';
 import ArticleItem from './components/Articles/ArticleItem';
 import Footer from './components/Layout/Footer';
+import FAQ from './components/StaticPages/FAQ';
+import ProhibitedItems from './components/StaticPages/ProhibitedItems';
 
 class App extends Component {
   render() {
@@ -29,7 +31,8 @@ class App extends Component {
           <Route path="/sponsorship" component={Sponsorship} />
           <Route path="/informations" component={Informations} />
           <Route path="/article" component={ArticleItem} />
-
+          <Route path="/faq" component={FAQ} />
+          <Route path="/prohibited-items" component={ProhibitedItems} />
           <Footer />
         </div>
       </Router>

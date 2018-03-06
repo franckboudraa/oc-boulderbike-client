@@ -70,8 +70,12 @@ const Header = () => {
               <Dropdown.Item as={NavLink} to="/informations">
                 Informations
               </Dropdown.Item>
-              <Dropdown.Item>Russian</Dropdown.Item>
-              <Dropdown.Item>Spanish</Dropdown.Item>
+              <Dropdown.Item as={NavLink} to="/prohibited-items">
+                Prohibited items
+              </Dropdown.Item>
+              <Dropdown.Item as={NavLink} to="/faq">
+                FAQ
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Menu.Item name="photos" as={NavLink} to="/photos">
