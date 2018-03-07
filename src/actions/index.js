@@ -14,10 +14,10 @@ export const fetchRiders = () => async dispatch => {
   try {
     const res = await axios.get(`${API_URL}/riders`);
     if (res.status === 200) {
-      dispatch({ type: FETCH_RIDERS, payload: res.data });
+      dispatch({ type: FETCH_RIDERS, riders: res.data });
     }
   } catch ({ response }) {
-    dispatch({ type: ERROR_RIDERS, payload: '' });
+    dispatch({ type: ERROR_RIDERS });
   }
 };
 
@@ -35,6 +35,6 @@ export const fetchPhotos = page => async dispatch => {
       });
     }
   } catch ({ response }) {
-    dispatch({ type: ERROR_PHOTOS, payload: '' });
+    dispatch({ type: ERROR_PHOTOS });
   }
 };

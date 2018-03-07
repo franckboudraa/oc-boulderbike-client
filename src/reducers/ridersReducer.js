@@ -6,7 +6,7 @@ export default function ridersReducer(
 ) {
   switch (action.type) {
     case FETCH_RIDERS:
-      return { ...state, loading: false, riders: action.payload };
+      return { ...state, loading: false, riders: action.riders };
     case ERROR_RIDERS:
       return { ...state, loading: false, error: true };
     default:
