@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Sponsorship extends Component {
-  render() {
-    return <div>Sponsorship</div>;
-  }
-}
+const Sponsorship = () => <div>Sponsorship</div>;
 
 export default Sponsorship;

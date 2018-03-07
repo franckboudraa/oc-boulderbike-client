@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Statistic } from 'semantic-ui-react';
 
 import countdown from '../../lib/countdown';
 
-class CountdownItem extends Component {
-  state = {
-    value: 0
-  };
+class CountdownItem extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0
+    };
+  }
 
   componentDidMount = () => {
     this.renderCountdown(this.props.unit);
-    this.refreshCounterEvery(this.props.refreshEvery * 1000);
+    this.refreshCounterEvery(1000);
   };
 
   componentWillUnmount = () => {

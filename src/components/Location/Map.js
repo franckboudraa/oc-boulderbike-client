@@ -19,9 +19,9 @@ class Map extends Component {
         bootstrapURLKeys={{ key: 'AIzaSyDLwL9cdzAulDezq8SLFUZMUfpW4ZM5dEo' }}
         options={{ scrollwheel: false }}
       >
-        {!loading && !error
-          ? riders.map(rider => <Marker key={rider.id} {...rider} />)
-          : ''}
+        {!loading &&
+          !error &&
+          riders.map(rider => <Marker key={rider.id} {...rider} />)}
       </GoogleMapReact>
     );
   }

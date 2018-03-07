@@ -1,7 +1,7 @@
 import React from 'react';
 import FAQAccordion from './FAQAccordion';
 
-import { Container, Card, Grid, Input, Icon } from 'semantic-ui-react';
+import { Container, Card, Grid, Input } from 'semantic-ui-react';
 
 const FAQ = () => {
   return (

@@ -10,26 +10,8 @@ class Riders extends Component {
     this.props.fetchRiders();
   };
 
-  renderRiders = () => {
-    const { riders } = this.props.riders;
-    return (
-      <Card.Group centered itemsPerRow={5} doubling>
-        {riders.map(rider => (
-          <RiderItem
-            key={rider.id}
-            firstName={rider.first_name}
-            lastName={rider.last_name}
-            avatar={rider.avatar}
-            city={rider.city}
-            state={rider.state}
-            quote={rider.quote}
-          />
-        ))}
-      </Card.Group>
-    );
-  };
   render() {
-    const { loading, error } = this.props.riders;
+    const { loading, error, riders } = this.props.riders;
     return (
       <Container>
         <Card fluid centered className="my-3">
@@ -37,16 +19,19 @@ class Riders extends Component {
             <div className="text-center mb-4">
               <h1>Riders in course</h1>
             </div>
-            {loading ? <Loader active inline="centered" /> : ''}
-            {error ? (
+            {loading && <Loader active inline="centered" />}
+            {error && (
               <Message negative>
                 <Message.Header>Sorry, an error occured</Message.Header>
                 <p>Please try again</p>
               </Message>
-            ) : (
-              ''
             )}
-            {!loading && !error ? this.renderRiders() : ''}
+            {!loading &&
+              !error && (
+                <Card.Group centered itemsPerRow={5} doubling>
+                  {riders.map(rider => <RiderItem key={rider.id} {...rider} />)}
+                </Card.Group>
+              )}
           </Card.Content>
         </Card>
       </Container>

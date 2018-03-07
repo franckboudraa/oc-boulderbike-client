@@ -20,12 +20,12 @@ var module;
  * @param {number} units the units to populate
  * @return {Object|number}
  */
-var countdown = /**
+// eslint-disable-next-line
+var countdown /**
  * @param {Object} module CommonJS Module
- */
-(function(module) {
+ */ = (function(module) {
   /*jshint smarttabs:true */
-
+  // eslint-disable-next-line
   'use strict';
 
   /**
@@ -623,6 +623,7 @@ var countdown = /**
    * @param {string} toUnit
    */
   function rippleRounded(ts, toUnit) {
+    // eslint-disable-next-line
     switch (toUnit) {
       case 'seconds':
         if (ts.seconds !== SECONDS_PER_MINUTE || isNaN(ts.minutes)) {

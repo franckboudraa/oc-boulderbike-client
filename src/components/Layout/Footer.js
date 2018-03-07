@@ -15,9 +15,7 @@ const Footer = () => {
         widths={3}
       >
         <Container>
-          <Menu.Item>
-            Boulder Bike Tour 2020 - Rocky Mountains, Colorado
-          </Menu.Item>
+          <Menu.Item>Boulder Bike Tour 2020</Menu.Item>
           <Menu.Item>
             <a
               href="http://www.franckboudraa.me"

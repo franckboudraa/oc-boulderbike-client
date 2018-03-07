@@ -1,19 +1,8 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import CountdownItem from '../Countdown/CountdownItem';
 
-class CountdownList extends Component {
-  render() {
-    return (
-      <div>
-        <CountdownItem unit="months" refreshEvery="60" />
-        <CountdownItem unit="days" refreshEvery="30" />
-        <CountdownItem unit="hours" refreshEvery="5" />
-        <CountdownItem unit="minutes" refreshEvery="1" />
-        <CountdownItem unit="seconds" refreshEvery="1" />
-      </div>
-    );
-  }
-}
+const items = ['month', 'days', 'hours', 'minutes', 'seconds'];
+const CountdownList = () =>
+  items.map(unit => <CountdownItem key={unit} unit={unit} />);
 
 export default CountdownList;

@@ -15,15 +15,15 @@ class Photos extends Component {
   };
 
   renderPhotos = () => {
-    const photos = this.props.photos.photos;
+    const { photos, page } = this.props.photos;
     return (
       <Card.Group centered itemsPerRow={5} doubling>
         {photos.map((photo, i) => (
           <PhotoItem
-            key={`${this.props.photos.page}-${photo.id}`}
+            key={`${page}-${photo.id}`}
             {...photo}
             index={i}
-            page={this.props.photos.page}
+            page={page}
             loadMore={() => this.loadMore()}
           />
         ))}
@@ -47,16 +47,14 @@ class Photos extends Component {
                 flickr with hashtag #BoulderBikeTour!
               </h3>
             </div>
-            {loading ? <Loader active inline="centered" /> : ''}
-            {error ? (
+            {loading && <Loader active inline="centered" />}
+            {error && (
               <Message negative>
                 <Message.Header>Sorry, an error occured</Message.Header>
                 <p>Please try again</p>
               </Message>
-            ) : (
-              ''
             )}
-            {!loading && !error ? this.renderPhotos() : ''}
+            {!loading && !error && this.renderPhotos()}
           </Card.Content>
         </Card>
       </Container>
