@@ -21,14 +21,18 @@ export const fetchRiders = () => async dispatch => {
   }
 };
 
-export const fetchPhotos = () => async dispatch => {
+export const fetchPhotos = page => async dispatch => {
   const FLICKR_PUBLIC_KEY = '767f4a87ffca583251e855cb80fc886c';
   const PHOTOS_BASE_URL = 'https://api.flickr.com/services/rest';
-  const PHOTOS_FLICKR_URL = `${PHOTOS_BASE_URL}/?api_key=${FLICKR_PUBLIC_KEY}&method=flickr.photos.search&tags=bikerace,BoulderBikeTour&media=photo&per_page=40&format=json&nojsoncallback=1`;
+  const PHOTOS_FLICKR_URL = `${PHOTOS_BASE_URL}/?api_key=${FLICKR_PUBLIC_KEY}&method=flickr.photos.search&tags=bikerace,BoulderBikeTour&media=photo&per_page=30&format=json&nojsoncallback=1`;
   try {
-    const res = await axios.get(`${PHOTOS_FLICKR_URL}&page=1`);
+    const res = await axios.get(`${PHOTOS_FLICKR_URL}&page=${page}`);
     if (res.status === 200) {
-      dispatch({ type: FETCH_PHOTOS, payload: res.data.photos.photo });
+      dispatch({
+        type: FETCH_PHOTOS,
+        photos: res.data.photos.photo,
+        page: res.data.photos.page
+      });
     }
   } catch ({ response }) {
     dispatch({ type: ERROR_PHOTOS, payload: '' });

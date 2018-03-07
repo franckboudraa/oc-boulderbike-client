@@ -7,20 +7,35 @@ import PhotoItem from './PhotoItem';
 
 class Photos extends Component {
   componentDidMount = () => {
-    this.props.fetchPhotos();
+    this.loadMore();
+  };
+
+  loadMore = () => {
+    this.props.fetchPhotos(this.props.photos.page + 1);
   };
 
   renderPhotos = () => {
     const photos = this.props.photos.photos;
     return (
       <Card.Group centered itemsPerRow={5} doubling>
-        {photos.map(photo => <PhotoItem key={photo.id} {...photo} />)}
+        {photos.map((photo, i) => (
+          <PhotoItem
+            key={`${this.props.photos.page}-${photo.id}`}
+            {...photo}
+            index={i}
+            page={this.props.photos.page}
+            loadMore={() => this.loadMore()}
+          />
+        ))}
+        <Card.Content extra>
+          <Loader active inline="centered" />
+        </Card.Content>
       </Card.Group>
     );
   };
 
   render() {
-    const { loading, error, photos } = this.props.photos;
+    const { loading, error } = this.props.photos;
     return (
       <Container>
         <Card fluid centered className="my-3">
