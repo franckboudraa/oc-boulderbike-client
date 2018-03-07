@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
 import ridersReducer from './ridersReducer';
+import photosReducer from './photosReducer';
 
 export default combineReducers({
-  riders: ridersReducer
+  riders: ridersReducer,
+  photos: photosReducer
 });

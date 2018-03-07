@@ -65,7 +65,7 @@ const Header = () => {
           <Menu.Item name="homepage" as={NavLink} exact to="/">
             Home
           </Menu.Item>
-          <Dropdown item simple text="Plan your race">
+          <Dropdown item text="Plan your race">
             <Dropdown.Menu>
               <Dropdown.Item as={NavLink} to="/informations">
                 Informations
