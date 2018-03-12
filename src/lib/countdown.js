@@ -25,7 +25,10 @@ var countdown /**
  * @param {Object} module CommonJS Module
  */ = (function(module) {
   /*jshint smarttabs:true */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39b57f7bba7fdab51b7026fe7ca1c6b923489d1d
   // eslint-disable-next-line
   'use strict';
 

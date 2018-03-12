@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Card, Image, Icon } from 'semantic-ui-react';
 
-class RiderItem extends Component {
-  render() {
-    return (
-      <Card raised link>
-        <Image src={this.props.avatar} fluid />
-        <Card.Content>
-          <Card.Header>{`${this.props.firstName} ${
-            this.props.lastName
-          }`}</Card.Header>
-          <Card.Meta>
-            <span className="date">{`${this.props.city}, ${
-              this.props.state
-            }`}</span>
-          </Card.Meta>
-          <Card.Description>{this.props.quote}</Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name="marker" />
-            Find {this.props.firstName} on map
-          </a>
-        </Card.Content>
-      </Card>
-    );
-  }
-}
+const RiderItem = props => {
+  return (
+    <Card raised link>
+      <Image src={props.avatar} fluid />
+      <Card.Content>
+        <Card.Header>
+          {props.first_name} {props.last_name}
+        </Card.Header>
+        <Card.Meta>
+          <span className="date">
+            {props.city}, {props.state}
+          </span>
+        </Card.Meta>
+        <Card.Description>{props.quote}</Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <a>
+          <Icon name="marker" />
+          Find {props.first_name} on map
+        </a>
+      </Card.Content>
+    </Card>
+  );
+};
 
 export default RiderItem;

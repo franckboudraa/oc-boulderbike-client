@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import Map from './Map';
 
-class Location extends Component {
-  render() {
-    return (
+const Location = () => {
+  return (
     <div className="full-height">
-    <Map />
+      <Map />
     </div>
-    )
-  }
-}
+  );
+};
 
 export default Location;

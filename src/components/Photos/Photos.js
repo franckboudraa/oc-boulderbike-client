@@ -15,7 +15,7 @@ class Photos extends Component {
   };
 
   renderPhotos = () => {
-    const photos = this.props.photos.photos;
+    const { photos, page } = this.props.photos;
     return (
       <Card.Group centered itemsPerRow={4} stackable doubling>
         {photos.map((photo, i) => (
@@ -23,7 +23,7 @@ class Photos extends Component {
             key={i}
             {...photo}
             index={i}
-            page={this.props.photos.page}
+            page={page}
             loadMore={() => this.loadMore()}
           />
         ))}

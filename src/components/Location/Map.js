@@ -1,46 +1,36 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import GoogleMapReact from 'google-map-react';
 
+import { fetchRiders } from '../../actions';
 import Marker from './Marker';
 
 class Map extends Component {
-  static defaultProps = {
-    center: { lat: 40.01, lng: -105.25 },
-    zoom: 13,
-    bounds: {
-      lat: 0,
-      lng: 0
-    }
-  };
-
-  renderMarkers = () => {
-    let localRiders = localStorage.getItem('bbt-riders');
-    const riders = JSON.parse(localRiders);
-    return (riders.map(rider => (
-          <Marker
-            id={rider.id}
-            key={rider.id}
-          lat={rider.lat}
-          lng={rider.lng}
-          name={rider.first_name}
-            avatar={rider.avatar}
-        />
-        ))
-    );
+  componentDidMount = () => {
+    this.props.fetchRiders();
   };
 
   render() {
+    const { loading, error, riders } = this.props.riders;
     return (
       <GoogleMapReact
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
+        defaultCenter={{ lat: 40.01, lng: -105.25 }}
+        defaultZoom={13}
         bootstrapURLKeys={{ key: 'AIzaSyDLwL9cdzAulDezq8SLFUZMUfpW4ZM5dEo' }}
         options={{ scrollwheel: false }}
       >
-        {this.renderMarkers()}
-        </GoogleMapReact>
+        {!loading &&
+          !error &&
+          riders.map(rider => <Marker key={rider.id} {...rider} />)}
+      </GoogleMapReact>
     );
   }
 }
 
-export default Map;
+function mapStateToProps(state) {
+  return {
+    riders: state.riders
+  };
+}
+
+export default connect(mapStateToProps, { fetchRiders })(Map);

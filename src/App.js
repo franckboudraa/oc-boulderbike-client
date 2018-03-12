@@ -23,7 +23,6 @@ class App extends Component {
       <Router>
         <div>
           <Header />
-
           <Route exact path="/" component={Homepage} />
           <Route path="/photos" component={Photos} />
           <Route path="/location" component={Location} />

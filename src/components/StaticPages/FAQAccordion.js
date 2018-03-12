@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 
-export default class FAQAccordion extends Component {
-  state = { activeIndex: 0 };
+export default class FAQAccordion extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { activeIndex: 0 };
+  }
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;

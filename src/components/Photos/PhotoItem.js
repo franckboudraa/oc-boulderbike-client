@@ -8,10 +8,8 @@ const PhotoItem = props => {
   const loadMoreAfterItem = 29 * props.page;
   return (
     <Card raised link>
-      {props.index === loadMoreAfterItem - 6 ? (
+      {props.index === loadMoreAfterItem - 6 && (
         <Visibility onOnScreen={() => props.loadMore()} once={true} />
-      ) : (
-        ''
       )}
       <Image
         src={PHOTO_URL}
