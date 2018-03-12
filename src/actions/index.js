@@ -30,6 +30,7 @@ export const fetchPhotos = page => async dispatch => {
     per_page: 30,
     format: 'json',
     nojsoncallback: 1,
+    extras:'date_upload, icon_server, owner_name, views',
     page
   };
   try {

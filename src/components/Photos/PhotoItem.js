@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { Card, Icon, Image, Visibility } from 'semantic-ui-react';
 
 const PhotoItem = props => {
@@ -6,11 +7,16 @@ const PhotoItem = props => {
     props.server
   }/${props.id}_${props.secret}_n.jpg`;
   const loadMoreAfterItem = 29 * props.page;
+  const timestamp = moment.unix(props.dateupload);
+  const avatarUrl = props.iconfarm > 0 ? `http://farm${props.iconfarm}.staticflickr.com/${props.iconserver}/buddyicons/${props.owner}.jpg` : 'https://www.flickr.com/images/buddyicon.gif';
   return (
     <Card raised link>
       {props.index === loadMoreAfterItem - 6 && (
         <Visibility onOnScreen={() => props.loadMore()} once={true} />
       )}
+      
+      <Card.Content><Image src={avatarUrl} avatar />
+    <span>{props.ownername}</span></Card.Content>
       <Image
         src={PHOTO_URL}
         as="img"
@@ -18,13 +24,14 @@ const PhotoItem = props => {
         fluid
       />
       <Card.Content>
-        <Card.Header>{props.title}</Card.Header>
+        {props.title}
         <Card.Meta>
-          <span className="date">owner</span>
+          <span className="date">{timestamp.fromNow()}</span>
         </Card.Meta>
-        <Card.Description>#tags</Card.Description>
       </Card.Content>
       <Card.Content extra>
+      <Icon name="eye" />{props.views}
+      <span style={{float:'right'}}>
         <a
           href={`https://www.flickr.com/photos/${props.owner}/${props.id}`}
           target="_blank"
@@ -32,6 +39,7 @@ const PhotoItem = props => {
         >
           <Icon name="external" /> View on flickr
         </a>
+        </span>
       </Card.Content>
     </Card>
   );
