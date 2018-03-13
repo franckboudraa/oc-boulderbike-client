@@ -1,11 +1,23 @@
 import React from 'react';
+import { Image, Popup } from 'semantic-ui-react';
 
 const Marker = ({ name, avatar }) => {
   return (
-    <div>
-      {name}
-      <img src={avatar} alt={name} />
-    </div>
+    <Popup
+      style={{ width: '100% !important', height: '100% !important' }}
+      className="testClass"
+      key={name}
+      trigger={
+        <Image
+          src={avatar}
+          avatar
+          style={{ width: '100% !important', height: '100% !important' }}
+          size="big"
+        />
+      }
+      header={name}
+      content={name}
+    />
   );
 };
 
