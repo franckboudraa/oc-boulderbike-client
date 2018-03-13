@@ -32,7 +32,7 @@ class App extends Component {
           <Route path="/article" component={ArticleItem} />
           <Route path="/faq" component={FAQ} />
           <Route path="/prohibited-items" component={ProhibitedItems} />
-          <Footer />
+          <Route path="/" render={props => <Footer {...props} />} />
         </div>
       </Router>
     );

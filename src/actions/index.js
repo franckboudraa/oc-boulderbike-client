@@ -37,7 +37,6 @@ export const fetchPhotos = page => async dispatch => {
   page === 1 && dispatch({ type: FLUSH_PHOTOS }); // if we want the first page, reset the state first (issue without this fix)
   try {
     const res = await axios.get(`${FLICKR_API_URL}`, { params: FLICKR_PARAMS });
-    console.log(res);
     dispatch({
       type: FETCH_PHOTOS,
       photos: res.data.photos.photo,
