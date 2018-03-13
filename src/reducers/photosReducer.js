@@ -1,4 +1,4 @@
-import { FETCH_PHOTOS, ERROR_PHOTOS } from '../actions/types';
+import { FETCH_PHOTOS, ERROR_PHOTOS, FLUSH_PHOTOS } from '../actions/types';
 
 export default function photosReducer(
   state = { loading: true, error: false, page: 0, photos: [] },
@@ -14,6 +14,8 @@ export default function photosReducer(
       };
     case ERROR_PHOTOS:
       return { ...state, loading: false, error: true };
+    case FLUSH_PHOTOS:
+      return { ...state, photos: [] };
     default:
       return state;
   }

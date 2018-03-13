@@ -3,7 +3,8 @@ import {
   FETCH_RIDERS,
   ERROR_RIDERS,
   FETCH_PHOTOS,
-  ERROR_PHOTOS
+  ERROR_PHOTOS,
+  FLUSH_PHOTOS
 } from './types';
 
 const API_URL = 'https://boulderbike.herokuapp.com';
@@ -33,6 +34,7 @@ export const fetchPhotos = page => async dispatch => {
     extras: 'date_upload, icon_server, owner_name, views',
     page
   };
+  page === 1 && dispatch({ type: FLUSH_PHOTOS }); // if we want the first page, reset the state first (issue without this fix)
   try {
     const res = await axios.get(`${FLICKR_API_URL}`, { params: FLICKR_PARAMS });
     console.log(res);
