@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-/*
-2254121210.0105cd8.c0d41d9f7d9b4e799122bd577124d913
-https://www.instagram.com/oauth/authorize/?client_id=0105cd8432bd495c81e22abf3cb1349c&redirect_uri=http://www.franckboudraa.me/boulderbike&response_type=token&scope=public_content
-https://api.instagram.com/v1/tags/LaTable/media/recent?access_token=2254121210.0105cd8.c0d41d9f7d9b4e799122bd577124d913
-*/
+import { Helmet } from 'react-helmet';
+
 import Header from './components/Layout/Header';
 import Homepage from './components/StaticPages/Homepage';
 import Photos from './components/Photos/Photos';
@@ -22,6 +19,9 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Helmet>
+            <title>Boulder Bike Tour 2020 - Rocky Mountains, Colorado</title>
+          </Helmet>
           <Header />
           <Route exact path="/" component={Homepage} />
           <Route path="/photos" component={Photos} />
