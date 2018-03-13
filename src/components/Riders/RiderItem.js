@@ -19,8 +19,8 @@ const RiderItem = props => {
       </Card.Content>
       <Card.Content extra>
         <a>
-          <Icon name="marker" />
-          Find {props.first_name} on map
+          <Icon name="user" />
+          View {props.first_name}'s profile
         </a>
       </Card.Content>
     </Card>

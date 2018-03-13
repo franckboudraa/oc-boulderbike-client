@@ -81,3 +81,6 @@ body {
 .grey-link {
   color: rgba(0, 0, 0, 0.4);
 }
+.popup.transition.visible::before {
+  z-index: -1;
+}

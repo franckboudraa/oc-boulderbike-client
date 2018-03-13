@@ -6,6 +6,10 @@ import { fetchRiders } from '../../actions';
 import Marker from './Marker';
 
 class Map extends Component {
+  static defaultProps = {
+    center: { lat: 40.01, lng: -105.25 },
+    zoom: 13
+  };
   componentDidMount = () => {
     this.props.fetchRiders();
   };
@@ -14,14 +18,14 @@ class Map extends Component {
     const { loading, error, riders } = this.props.riders;
     return (
       <GoogleMapReact
-        defaultCenter={{ lat: 40.01, lng: -105.25 }}
-        defaultZoom={13}
+        defaultCenter={this.props.center}
+        defaultZoom={this.props.zoom}
         bootstrapURLKeys={{ key: 'AIzaSyDLwL9cdzAulDezq8SLFUZMUfpW4ZM5dEo' }}
         options={{ scrollwheel: false }}
       >
         {!loading &&
           !error &&
-          riders.map(rider => <Marker key={rider.id} {...rider} />)}
+          riders.map(rider => <Marker key={`t${rider.id}`} {...rider} />)}
       </GoogleMapReact>
     );
   }
