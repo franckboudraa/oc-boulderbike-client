@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid } from 'semantic-ui-react';
+import { Container, Grid, Segment } from 'semantic-ui-react';
 
 import Countdown from '../Countdown/Countdown';
 import CarouselPlayer from '../Carousel/CarouselPlayer';
@@ -25,7 +25,7 @@ const Homepage = () => {
             <PhotosModule />
           </Grid.Column>
           <Grid.Column className="px-1" mobile={16} tablet={6} computer={8}>
-            toDo
+            <Segment>toDo</Segment>
           </Grid.Column>
           <Grid.Column className="pl-1" mobile={16} tablet={5} computer={4}>
             <SponsorshipModule />

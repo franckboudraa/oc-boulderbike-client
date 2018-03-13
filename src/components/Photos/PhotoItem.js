@@ -34,11 +34,9 @@ const PhotoItem = props => {
         <span>{props.ownername}</span>
       </Card.Content>
       <Modal
-        dimmer="blurring"
         trigger={
           <Image
             src={`${PHOTO_URL}${photoSizes[0]}.jpg`}
-            as="img"
             style={{ width: '100%', height: '15rem', objectFit: 'cover' }}
             fluid
           />
@@ -52,7 +50,6 @@ const PhotoItem = props => {
         <Modal.Content>
           <Image
             src={`${PHOTO_URL}${photoSizes[1]}.jpg`}
-            as="img"
             style={{ width: '80vw', height: '75vh', objectFit: 'cover' }}
             fluid
           />

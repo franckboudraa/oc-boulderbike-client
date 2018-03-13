@@ -13,6 +13,7 @@ import ArticleItem from './components/Articles/ArticleItem';
 import Footer from './components/Layout/Footer';
 import FAQ from './components/StaticPages/FAQ';
 import ProhibitedItems from './components/StaticPages/ProhibitedItems';
+import RiderProfile from './components/Riders/RiderProfile';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path="/photos" component={Photos} />
           <Route path="/location" component={Location} />
           <Route path="/riders" component={Riders} />
+          <Route path="/rider/:id" component={RiderProfile} />
           <Route path="/sponsorship" component={Sponsorship} />
           <Route path="/informations" component={Informations} />
           <Route path="/article" component={ArticleItem} />

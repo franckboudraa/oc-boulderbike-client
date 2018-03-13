@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import { Card, Image, Icon } from 'semantic-ui-react';
 
 const RiderItem = props => {
@@ -18,10 +19,10 @@ const RiderItem = props => {
         <Card.Description>{props.quote}</Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <a>
+        <Link to={`/rider/${props.id}`}>
           <Icon name="user" />
           View {props.first_name}'s profile
-        </a>
+        </Link>
       </Card.Content>
     </Card>
   );
