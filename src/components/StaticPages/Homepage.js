@@ -1,12 +1,11 @@
 import React from 'react';
-import { Container, Grid, Image } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 
 import Countdown from '../Countdown/Countdown';
 import CarouselPlayer from '../Carousel/CarouselPlayer';
 import ArticleModule from '../Articles/ArticleModule';
 import PhotosModule from '../Photos/PhotosModule';
-
-import motivationCover from '../../assets/motivation_cover.jpg';
+import SponsorshipModule from '../Sponsorship/SponsorshipModule';
 
 const Homepage = () => {
   return (
@@ -22,18 +21,14 @@ const Homepage = () => {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row stretched columns={3} className="pt-1">
-          <Grid.Column className="pr-1" mobile={16} tablet={6} computer={6}>
+          <Grid.Column className="pr-1" mobile={16} tablet={5} computer={4}>
             <PhotosModule />
           </Grid.Column>
-          <Grid.Column className="px-1" mobile={16} tablet={6} computer={6}>
-            <PhotosModule />
+          <Grid.Column className="px-1" mobile={16} tablet={6} computer={8}>
+            toDo
           </Grid.Column>
-          <Grid.Column className="pl-1" mobile={16} tablet={4} computer={4}>
-            <Image
-              src={motivationCover}
-              as="img"
-              style={{ imageFit: 'cover' }}
-            />
+          <Grid.Column className="pl-1" mobile={16} tablet={5} computer={4}>
+            <SponsorshipModule />
           </Grid.Column>
         </Grid.Row>
       </Grid>

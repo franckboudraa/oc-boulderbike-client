@@ -24,7 +24,7 @@ const PhotoItem = props => {
         }/buddyicons/${props.owner}.jpg`
       : 'https://www.flickr.com/images/buddyicon.gif';
   return (
-    <Card raised link>
+    <Card fluid raised link>
       {props.index === loadMoreAfterItem - 6 && (
         <Visibility onOnScreen={() => props.loadMore()} once={true} />
       )}
@@ -47,7 +47,7 @@ const PhotoItem = props => {
       >
         <Header>
           <Image src={avatarUrl} avatar />
-        <span style={{marginLeft:'1rem'}}>{props.ownername}</span>
+          <span style={{ marginLeft: '1rem' }}>{props.ownername}</span>
         </Header>
         <Modal.Content>
           <Image
