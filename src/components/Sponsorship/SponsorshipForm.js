@@ -44,7 +44,7 @@ class SponsorshipForm extends Component {
             placeholder="Your first name"
             value={firstName}
             onChange={this.handleChange}
-            minLength={6}
+            minLength={2}
             maxLength={30}
             required
             disabled={success}
@@ -55,7 +55,7 @@ class SponsorshipForm extends Component {
             placeholder="Your last name"
             value={lastName}
             onChange={this.handleChange}
-            minLength={6}
+            minLength={2}
             maxLength={30}
             required
             disabled={success}
@@ -68,7 +68,7 @@ class SponsorshipForm extends Component {
           placeholder="Your email address"
           value={email}
           onChange={this.handleChange}
-          minLength={6}
+          minLength={5}
           maxLength={40}
           required
           disabled={success}
