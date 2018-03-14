@@ -6,7 +6,10 @@ import {
   ERROR_PHOTOS,
   FLUSH_PHOTOS,
   FETCH_RIDER,
-  ERROR_RIDER
+  ERROR_RIDER,
+  SUCCESS_SPONSORSHIP,
+  ERROR_SPONSORSHIP,
+  PENDING_SPONSORSHIP
 } from './types';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
@@ -62,5 +65,24 @@ export const fetchRider = id => async dispatch => {
     });
   } catch ({ response }) {
     dispatch({ type: ERROR_RIDER });
+  }
+};
+
+export const submitSponsorship = form => async dispatch => {
+  dispatch({ type: PENDING_SPONSORSHIP });
+
+  try {
+    const params = {
+      first_name: form.firstName,
+      last_name: form.lastName,
+      email: form.email,
+      slogan: form.slogan
+    };
+    const res = await axios.post(`${API_URL}/submissions`, params);
+    if (res.status === 200) {
+      dispatch({ type: SUCCESS_SPONSORSHIP });
+    }
+  } catch ({ response }) {
+    dispatch({ type: ERROR_SPONSORSHIP });
   }
 };
