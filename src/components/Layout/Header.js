@@ -68,10 +68,10 @@ const Header = () => {
           <Dropdown item text="Plan your race">
             <Dropdown.Menu>
               <Dropdown.Item as={NavLink} to="/informations">
-                Informations
+                Medical Guidelines
               </Dropdown.Item>
               <Dropdown.Item as={NavLink} to="/prohibited-items">
-                Prohibited items
+                Prohibited Items
               </Dropdown.Item>
               <Dropdown.Item as={NavLink} to="/faq">
                 FAQ

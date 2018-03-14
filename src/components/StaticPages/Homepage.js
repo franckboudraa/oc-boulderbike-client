@@ -28,7 +28,6 @@ const Homepage = () => {
           </Grid.Column>
           <Grid.Column className="px-1" mobile={16} tablet={6} computer={8}>
             <Segment>
-              #1 rider : Alejandro Smith
               <Link
                 to="/location"
                 className="grey-link"
