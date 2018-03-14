@@ -20,7 +20,7 @@ class Map extends Component {
       <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
-        bootstrapURLKeys={{ key: 'AIzaSyDLwL9cdzAulDezq8SLFUZMUfpW4ZM5dEo' }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GMAP_KEY }}
         options={{ scrollwheel: false }}
       >
         {!loading &&
