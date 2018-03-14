@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -15,7 +17,13 @@ import FAQ from './components/StaticPages/FAQ';
 import ProhibitedItems from './components/StaticPages/ProhibitedItems';
 import RiderProfile from './components/Riders/RiderProfile';
 
+import { startHerokuVM } from './actions';
+
 class App extends Component {
+  componentDidMount = () => {
+    this.props.startHerokuVM(); // ping the Heroku backend VM for starting it
+  };
+
   render() {
     return (
       <Router>
@@ -41,4 +49,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { startHerokuVM })(App);

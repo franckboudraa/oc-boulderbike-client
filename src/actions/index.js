@@ -4,10 +4,17 @@ import {
   ERROR_RIDERS,
   FETCH_PHOTOS,
   ERROR_PHOTOS,
-  FLUSH_PHOTOS
+  FLUSH_PHOTOS,
+  FETCH_RIDER,
+  ERROR_RIDER
 } from './types';
 
-const API_URL = 'https://boulderbike.herokuapp.com';
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+const FLICKR_PUBLIC_KEY = process.env.REACT_APP_FLICKR_KEY;
+
+export const startHerokuVM = () => async dispatch => {
+  await axios.get(API_URL); // ping the Heroku backend VM for starting it
+};
 
 export const fetchRiders = () => async dispatch => {
   try {
@@ -21,7 +28,6 @@ export const fetchRiders = () => async dispatch => {
 };
 
 export const fetchPhotos = page => async dispatch => {
-  const FLICKR_PUBLIC_KEY = process.env.REACT_APP_FLICKR_KEY;
   const FLICKR_API_URL = 'https://api.flickr.com/services/rest/';
   const FLICKR_PARAMS = {
     api_key: FLICKR_PUBLIC_KEY,
@@ -44,5 +50,17 @@ export const fetchPhotos = page => async dispatch => {
     });
   } catch ({ response }) {
     dispatch({ type: ERROR_PHOTOS });
+  }
+};
+
+export const fetchRider = id => async dispatch => {
+  try {
+    const res = await axios.get(`${API_URL}/riders/${id}`);
+    dispatch({
+      type: FETCH_RIDER,
+      rider: res.data[0]
+    });
+  } catch ({ response }) {
+    dispatch({ type: ERROR_RIDER });
   }
 };
