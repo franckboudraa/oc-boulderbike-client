@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container, Grid, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Container, Icon, Grid, Segment } from 'semantic-ui-react';
 
 import Countdown from '../Countdown/Countdown';
 import CarouselPlayer from '../Carousel/CarouselPlayer';
 import ArticleModule from '../Articles/ArticleModule';
 import PhotosModule from '../Photos/PhotosModule';
 import SponsorshipModule from '../Sponsorship/SponsorshipModule';
+import Map from '../Location/Map';
 
 const Homepage = () => {
   return (
@@ -25,7 +27,17 @@ const Homepage = () => {
             <PhotosModule />
           </Grid.Column>
           <Grid.Column className="px-1" mobile={16} tablet={6} computer={8}>
-            <Segment>toDo</Segment>
+            <Segment>
+              #1 rider : Alejandro Smith
+              <Link
+                to="/location"
+                className="grey-link"
+                style={{ float: 'right' }}
+              >
+                <Icon name="angle right" />Follow the riders in live
+              </Link>
+            </Segment>
+            <Map />
           </Grid.Column>
           <Grid.Column className="pl-1" mobile={16} tablet={5} computer={4}>
             <SponsorshipModule />
