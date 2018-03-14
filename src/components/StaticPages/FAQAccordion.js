@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { Accordion, Icon } from 'semantic-ui-react';
 
 export default class FAQAccordion extends PureComponent {
@@ -26,13 +27,18 @@ export default class FAQAccordion extends PureComponent {
           onClick={this.handleClick}
         >
           <Icon name="dropdown" />
-          What is a dog?
+          How to applying for entry to the Boulder Bike Tour?
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
           <p>
-            A dog is a type of domesticated animal. Known for its loyalty and
-            faithfulness, it can be found as a welcome guest in many households
-            across the world.
+            The general-entry application period for the 2020 Boulder Bike Tour
+            will be January 15-February 15, 2020. Riders must have applied for
+            the general entry drawing or claimed their guaranteed entry during
+            this one-month application period. Guaranteed entries not claimed
+            during this time period are forfeited.
+          </p>
+          <p>
+            <Link to="/sponsorship">Visit the "Sponsorship" page.</Link>
           </p>
         </Accordion.Content>
 
@@ -42,13 +48,18 @@ export default class FAQAccordion extends PureComponent {
           onClick={this.handleClick}
         >
           <Icon name="dropdown" />
-          What kinds of dogs are there?
+          What is the cancellation policy?
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
           <p>
-            There are many breeds of dogs. Each breed varies in size and
-            temperament. Owners often select a breed of dog that they find to be
-            compatible with their own lifestyle and desires from a companion.
+            All Boulder Bike Tour fees are non-refundable. If you cancel your
+            entry, it cannot be reinstated for the current year's Boulder Bike
+            Tour. If you cancel this year (and did not cancel last time) and you
+            want to guarantee your entry for the following event, you'll need to
+            apply for the upcoming race during the application window and pay
+            the processing and entry fees required. Riders who have guaranteed
+            entry to the 2020 race because they cancelled in 2010 cannot cancel
+            a second time and become eligible for guaranteed entry in 2030.
           </p>
         </Accordion.Content>
 
@@ -58,19 +69,14 @@ export default class FAQAccordion extends PureComponent {
           onClick={this.handleClick}
         >
           <Icon name="dropdown" />
-          How do you acquire a dog?
+          Are there toilets at the start?
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
           <p>
-            Three common ways for a prospective owner to acquire a dog is from
-            pet shops, private owners, or shelters.
-          </p>
-          <p>
-            A pet shop may be the most convenient way to buy a dog. Buying a dog
-            from a private owner allows you to assess the pedigree and
-            upbringing of your dog before choosing to take it home. Lastly,
-            finding your dog from a shelter, helps give a good home to a dog who
-            may not find one so readily.
+            There are more than 1,500 toilets in the start villages and the
+            start corrals. Along the course, toilets are located every mile from
+            mile 3 onward. Boulder City reserves the right to disqualify anyone
+            who uses any alternative to the supplied toilets.
           </p>
         </Accordion.Content>
       </Accordion>

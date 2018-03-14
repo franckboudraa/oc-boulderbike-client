@@ -74,7 +74,7 @@ const Header = () => {
                 Prohibited Items
               </Dropdown.Item>
               <Dropdown.Item as={NavLink} to="/faq">
-                FAQ
+                Help Center
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
