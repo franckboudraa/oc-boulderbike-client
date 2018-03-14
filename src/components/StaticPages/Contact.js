@@ -19,9 +19,9 @@ class Contact extends Component {
         error={this.state.error}
         onSubmit={() => this.setState({ success: true, disabled: true })}
       >
-        <h3>Contact us</h3>
         <Form.Input
           fluid
+          label="Email Address"
           disabled={this.state.disabled}
           icon="mail"
           iconPosition="left"
@@ -31,6 +31,7 @@ class Contact extends Component {
         />
         <Form.TextArea
           disabled={this.state.disabled}
+          label="Message"
           autoHeight
           placeholder="Your message"
           required

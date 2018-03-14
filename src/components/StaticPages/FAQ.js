@@ -23,9 +23,11 @@ class FAQ extends Component {
                 <Grid stackable>
                   <Grid.Row>
                     <Grid.Column width={10}>
+                      <h3 style={{ textAlign: 'center' }}>FAQ</h3>
                       <FAQAccordion />
                     </Grid.Column>
                     <Grid.Column width={6}>
+                      <h3 style={{ textAlign: 'center' }}>Contact us</h3>
                       <Contact />
                     </Grid.Column>
                   </Grid.Row>
