@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPhotos } from '../../actions';
 
-import { Icon, Loader, Message, Segment } from 'semantic-ui-react';
+import { Loader, Message } from 'semantic-ui-react';
 
 import PhotoItem from './PhotoItem';
 
@@ -25,10 +25,7 @@ class PhotosModule extends Component {
   render() {
     const { loading, error } = this.props.photos;
     return (
-      <Segment padded={false}>
-        <a href="/photos" className="grey-link">
-          <Icon name="angle right" />Follow #boulderbiketour
-        </a>
+      <div>
         {loading && <Loader active inline="centered" />}
         {error && (
           <Message negative>
@@ -37,7 +34,7 @@ class PhotosModule extends Component {
           </Message>
         )}
         {!loading && !error && this.renderPhotos()}
-      </Segment>
+      </div>
     );
   }
 }

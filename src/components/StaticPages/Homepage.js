@@ -25,9 +25,18 @@ const Homepage = () => {
         <Grid.Row stretched columns={3} className="pt-1">
           <Grid.Column className="pr-1" mobile={16} tablet={5} computer={4}>
             <PhotosModule />
+            <Segment className="mt-2">
+              <Link
+                to="/location"
+                className="grey-link"
+                style={{ float: 'right' }}
+              >
+                <Icon name="angle right" />More about #boulderbiketour
+              </Link>
+            </Segment>
           </Grid.Column>
           <Grid.Column className="px-1" mobile={16} tablet={6} computer={8}>
-            <Segment>
+            <Segment className="mb-1">
               <Link
                 to="/location"
                 className="grey-link"
