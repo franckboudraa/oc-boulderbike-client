@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import moment from 'moment';
 import {
   Card,
@@ -57,7 +58,7 @@ const PhotoItem = props => {
       </Modal>
 
       <Card.Content>
-        {props.title}
+        {_.truncate(props.title)}
         <Card.Meta>
           <span className="date">{timestamp.fromNow()}</span>
         </Card.Meta>
